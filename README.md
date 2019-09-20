@@ -4,13 +4,21 @@
 
 **Please read this entire README to make sure you understand what is expected of you before you begin.**
 
-This sprint challenge is designed to ensure that you are competent with the concepts taught throughout the Sprint covering Data Persistence.
+This sprint challenge is designed to ensure that you are competent with the concepts taught throughout
+ the Sprint covering Data Persistence.
 
-In your solution, it is especially important that you follow best practices such as MVC and good, consistent code style. You will be scored on these aspects as well as the project MVP (minimum viable product) requirements below.
+In your solution, it is especially important that you follow best practices such as MVC and good,
+ consistent code style. You will be scored on these aspects as well as the project MVP (minimum viable product) 
+ requirements below.
 
-Fork this repository and clone your fork to your computer. Create your Android Studio project in this cloned fork repository folder, then commit and create a pull request. Commit appropriately as you work. When finished, push your final project to GitHub and comment on the pull requestto indicate that your project is complete.
+Fork this repository and clone your fork to your computer. Create your Android Studio project in 
+this cloned fork repository folder, then commit and create a pull request. Commit appropriately as 
+you work. When finished, push your final project to GitHub and comment on the pull requestto indicat
+e that your project is complete.
 
-You have *3 hours*, and you should work *independently* — looking things up (search, notes) is all fair game. And questions about *process* / *logistics* (i.e. if you have a hard time opening/saving to GitHub) are fair game too.
+You have *3 hours*, and you should work *independently* — looking things up (search, notes)
+ is all fair game. And questions about *process* / *logistics* (i.e. if you have a hard time opening/saving to GitHub)
+ are fair game too.
 
 Good luck!
 
@@ -22,15 +30,20 @@ This screen recording previews the look and feel of a completed project that mee
 
 ## Requirements
 
-This project uses The Movie DB API. The API documentation is at [https://developers.themoviedb.org/3/getting-started/introduction], but much of what you will need is included below.
+This project uses The Movie DB API. The API documentation is at 
+[https://developers.themoviedb.org/3/getting-started/introduction], but much
+ of what you will need is included below.
 
 The requirements for this project are as follows:
 
-1. A `FavoriteMovie` class. Its members will be used to store favorite movies in your Room database and allow users to add movies to their favorites and mark them as watched.
+1. A `FavoriteMovie` class. Its members will be used to store favorite movies in your
+ Room database and allow users to add movies to their favorites and mark them as watched.
 
-   > This will be your only local storage of movies, so you'll want to include anything you wish to  display to the user like the title
+   > This will be your only local storage of movies, so you'll want to include anything you wish 
+   to  display to the user like the title
 
-2. A `MoviesAPI` Retrofit class that implements a call to the "search/movie" endpoint (see [https://developers.themoviedb.org/3/search/search-movies]).
+2. A `MoviesAPI` Retrofit class that implements a call to the "search/movie" endpoint 
+(see [https://developers.themoviedb.org/3/search/search-movies]).
 
 3. A Room database that can perform CRUD operations with a `FavoriteMovie` entity.
 
@@ -53,11 +66,14 @@ The requirements for this project are as follows:
 6. All of the background classes we've worked with this week to facilitate database interactions. 
 
 #### Hints
-1. The API requires a key. There is a key provided in the `MovieConstants` file under the val `API_KEY_PARAM`. If you want your own key, you can register for an account at [https://www.themoviedb.org/account/signup] and request a key at [https://www.themoviedb.org/settings/api] (recommended if you want to use the API outside of this project).
+1. The API requires a key. There is a key provided in the `MovieConstants` file under the val `API_KEY_PARAM`. 
+If you want your own key, you can register for an account at [https://www.themoviedb.org/account/signup] 
+and request a key at [https://www.themoviedb.org/settings/api] (recommended if you want to use the API outside of this project).
 
 2. Store the API key in SharedPreferences and retreive it to pass as a query parameter when making the API call.
 
-3. A call to the search/movie endpoint looks like this (for a search on "Avengers" with an API key of "12345"): `https://api.themoviedb.org/3/search/movie?language=en-US&page=1&include_adult=false&query=Avengers&api_key=12345`
+3. A call to the search/movie endpoint looks like this (for a search on "Avengers" with an API key of "12345"): 
+`https://api.themoviedb.org/3/search/movie?language=en-US&page=1&include_adult=false&query=Avengers&api_key=12345`
 
       > The base url is `https://api.themoviedb.org/3/`
 
@@ -70,7 +86,11 @@ The requirements for this project are as follows:
 fun friends(@Query("page") page: Int): Call<FriendResponse>
 ```
 
-4. Request results are returned in a JSON object, stored as a JSONArray in the `results` attribute of the object. You have been provided with a `MovieSearchResult` and a `MovieOverview` object that GSON will use to parse the result object. In your Retrofit `Callback` `onResponse`, the response body will contain a single `MovieSearchResult`, and the list of movies will be in the results member variable (in code, something like `response.body.results`).
+4. Request results are returned in a JSON object, stored as a JSONArray in the `results` attribute of 
+the object. You have been provided with a `MovieSearchResult` and a `MovieOverview` object that GSON will
+ use to parse the result object. In your Retrofit `Callback` `onResponse`, the response body will contain a 
+ single `MovieSearchResult`, and the list of movies will be in the results member variable (in code, something
+ like `response.body.results`).
 
 ##Challenge
 1. Try using a `ViewModel` and `LiveData` to handle configuration changes and automatic updates.
