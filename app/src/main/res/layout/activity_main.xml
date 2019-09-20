@@ -15,12 +15,12 @@
         android:layout_height="wrap_content"
         android:hint="Search for movie here"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_search"
+        app:layout_constraintRight_toLeftOf="@id/btn_fav"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_search"/>
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fav"/>
 
     <Button
-        android:id="@+id/btn_search"
+        android:id="@+id/btn_fav"
         android:text="Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
