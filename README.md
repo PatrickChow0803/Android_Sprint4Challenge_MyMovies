@@ -30,6 +30,7 @@ This screen recording previews the look and feel of a completed project that mee
 
 ## Requirements
 
+
 This project uses The Movie DB API. The API documentation is at 
 [https://developers.themoviedb.org/3/getting-started/introduction], but much
  of what you will need is included below.
